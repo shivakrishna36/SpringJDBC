@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.app.account.SavingsAccount;
 import com.capgemini.app.account.dao.SavingsAccountDAO;
@@ -63,6 +64,7 @@ public class SavingsAccountServiceImpl implements SavingsAccountService {
 		}
 	}
 
+	@Transactional
 	@Override
 	public void fundTransfer(SavingsAccount sender, SavingsAccount receiver, double amount)
 			throws ClassNotFoundException, SQLException {
